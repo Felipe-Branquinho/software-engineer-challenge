@@ -1,3 +1,7 @@
+# Testando código
+
+Depois do docker-compose basta acessar localhost:4200
+
 ![PicPay](https://user-images.githubusercontent.com/1765696/26998603-711fcf30-4d5c-11e7-9281-0d9eb20337ad.png)
 
 # Teste Backend

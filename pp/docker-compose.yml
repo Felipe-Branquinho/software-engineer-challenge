@@ -1,0 +1,35 @@
+version: "3.2"
+services:
+  app:
+    container_name: app
+    build: ./app
+    links:
+      - db
+    ports:
+      - "3000:3000"
+    volumes:
+      - type: bind
+        source: ./app/src
+        target: /app/src
+  db:
+    container_name: db
+    build: ./db
+    ports:
+      - "27000:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+  web:
+    container_name: web
+    build: ./web
+    links:
+      - app
+    ports:
+      - "4200:8080"
+    volumes:
+      - type: bind
+        source: ./web/src
+        target: /web/src
+volumes:
+  app:
+  db:
+  web:
